@@ -1,0 +1,114 @@
+<form id="mi-formulario" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="nombreInput">Nombre</label>
+      <input type="text" class="form-control" id="nombreInput" name="nombre" placeholder="Tu nombre" required data-bv-notempty-message="Por favor ingresa tu nombre">
+    </div>
+    <div class="form-group">
+      <label for="apellidoInput">Apellido</label>
+      <input type="text" class="form-control" id="apellidoInput" name="apellido" placeholder="Tu apellido" required data-bv-notempty-message="Por favor ingresa tu apellido">
+    </div>
+    <div class="form-group">
+      <label for="emailInput">Email</label>
+      <input type="email" class="form-control" id="emailInput" name ="email" placeholder ="Tu email" required data-bv-notempty-message ="Por favor ingresa un email válido">
+    </div>
+    <div class ="form-group">
+      <label for ="sexoSelect">Sexo</label>
+      <select class ="form-control" id ="sexoSelect" name ="sexo" required data-bv-notempty-message ="Por favor elige tu sexo">
+        <option value ="">Selecciona una opción</option>
+        <option value ="Femenino">Femenino</option>
+        <option value ="Masculino">Masculino</option>
+        <option value ="Otro">Otro</option>
+      </select> 
+    </div> 
+    <!-- Agregamos un campo para subir archivos -->
+    <div class ="form-group">
+      <label for ="archivoInput">Archivo</label> 
+      <!-- Usamos data-bv-file para especificar las opciones de validación del archivo -->
+      <!-- data-bv-file-extension indica las extensiones permitidas -->
+      <!-- data-bv-file-maxsize indica el tamaño máximo en bytes -->
+      <!-- data-bv-file-message indica el mensaje de error genérico -->
+      <!-- data-bv-file-maxsize-message indica el mensaje de error por tamaño -->
+      <!-- data-bv-file-extension-message indica el mensaje de error por extensión -->
+      
+       <!-- Usamos accept para restringir los tipos de archivos que se pueden seleccionar -->
+       <!-- Usamos multiple para permitir seleccionar más de un archivo -->
+       <!-- Usamos name con corchetes para enviar los archivos como un arreglo -->
+       
+       <!-- Para mostrar una vista previa de los archivos seleccionados, usamos un div con la clase file-preview -->
+       
+       <!-- Para mostrar el botón de eliminar los archivos seleccionados, usamos un div con la clase file-delete-button -->
+       
+       <!-- Para mostrar el progreso de la subida de los archivos, usamos un div con la clase file-progress-bar -->
+       
+       <!-- Para mostrar el estado de la subida de los archivos, usamos un div con la clase file-upload-status -->
+       
+       <!-- Para mostrar el resultado de la subida de los archivos, usamos un div con la clase file-upload-response -->
+  
+      
+       <!-- Para personalizar el texto del botón de eliminar, usamos el atributo data-delete-button-text -->
+  
+      
+       <!-- Para personalizar el texto del botón de subir, usamos el atributo data-upload-button-text -->
+  
+      
+       <!-- Para personalizar el texto del botón de cancelar, usamos el atributo data-cancel-button-text -->
+  
+      
+       <!-- Para personalizar el texto del mensaje de éxito, usamos el atributo data-success-message -->
+  
+      
+       <!-- Para personalizar el texto del mensaje de error, usamos el atributo data-error-message -->
+  
+      
+       <!-- Para indicar la url donde se enviarán los archivos, usamos el atributo data-upload-url -->
+  
+      
+       <!-- Para indicar si se debe subir automáticamente los archivos al seleccionarlos, usamos el atributo data-auto-upload -->
+  
+      
+       <!-- Para indicar si se debe mostrar una confirmación antes de eliminar los archivos seleccionados, usamos el atributo data-confirm-delete -->
+  
+      
+       <!-- Para indicar si se debe mostrar una confirmación antes de cancelar la subida de los archivos, usamos el atributo data-confirm-cancel -->
+  
+      
+       <!-- Para indicar si se debe mostrar una alerta cuando se intenta subir más archivos que los permitidos por el campo, usamos el atributo data-alert-on-exceed -->
+  
+      
+       <!-- Para indicar si se debe permitir arrastrar y soltar archivos sobre el campo, usamos el atributo data-drag-drop -->
+  
+      
+       <!-- Para indicar si se debe mostrar una miniatura de los archivos seleccionados (solo para imágenes), usamos el atributo data-show-preview -->
+  
+      
+       <!-- Para indicar si se debe mostrar el nombre y tamaño de los archivos seleccionados, usamos el atributo data-show-details -->
+  
+      
+       <!-- Para indicar si se debe mostrar los iconos de los tipos de archivos seleccionados, usamos el atributo data-show-icons -->
+  
+      
+       <!-- Para indicar si se debe mostrar la barra de progreso durante la subida de los archivos, usamos el atributo data-show-progress-bar -->
+  
+      
+       <!-- Para indicar si se debe mostrar el estado y resultado de la subida de los archivos, usamos el atributo data-show-status -->
+  
+      
+       <!-- Para indicar si se debe mostrar los botones para eliminar y subir los archivos seleccionados, usamos el atributo data-show-buttons -->
+  
+      
+       <!-- Para indicar si se debe habilitar o deshabilitar la validación del campo al cambiar su valor o estado, usamos el atributo data-revalidate-on-change -->
+  
+  
+  <input type = "file"
+         class = "form-control"
+         id = "archivoInput"
+         name = "archivo[]"
+         accept = ".pdf,.doc,.docx"
+         multiple
+         required
+         data-bv-file
+         data-bv-file-extension = "pdf,doc,docx"
+         data-bv-file-maxsize = "1048576"
+         data-bv-file-message = "Por favor selecciona uno o más archivos válidos"
+         data-bv-file-maxsize-message = "El tamaño máximo permitido es {fileSize} MB"
+         data-bv-file

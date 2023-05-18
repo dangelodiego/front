@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulario de ejemplo</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Formulario de ejemplo</h1>
+    <form id="mi-formulario" novalidate>
+      <div class="form-group">
+        <label for="nombreInput">Nombre</label>
+        <input type="text" class="form-control" id="nombreInput" name="nombre" placeholder="Tu nombre" required>
+        <div class="invalid-feedback">
+          Por favor ingresa tu nombre.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="apellidoInput">Apellido</label>
+        <input type="text" class="form-control" id="apellidoInput" name="apellido" placeholder="Tu apellido" required>
+        <div class="invalid-feedback">
+          Por favor ingresa tu apellido.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="emailInput">Email</label>
+        <input type="email" class="form-control" id="emailInput" name="email" placeholder="Tu email" required>
+        <div class="invalid-feedback">
+          Por favor ingresa un email válido.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="sexoSelect">Sexo</label>
+        <select class="form-control" id="sexoSelect" name="sexo" required>
+          <option value="">Selecciona una opción</option>
+          <option value="Femenino">Femenino</option>
+          <option value="Masculino">Masculino</option>
+          <option value="Otro">Otro</option>
+        </select>
+        <div class="invalid-feedback">
+          Por favor elige tu sexo.
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      // Aplicar la validación de jQuery al formulario
+      $("#mi-formulario").validate({
+        errorElement: "div", // Usar div en lugar de label para mostrar los mensajes de error
+        errorPlacement: function(error, element) {
+          // Agregar la clase 'invalid-feedback' a los mensajes de error
+          error.addClass("invalid-feedback");
+          error.appendTo(element.parent());
+        },
+        highlight: function(element, errorClass, validClass) {
+          // Agregar la clase 'is-invalid' al campo de entrada con error
+          $(element).addClass("is-invalid");
+        },
+        unhighlight: function(element, errorClass, validClass) {
+          // Remover la clase 'is-invalid' del campo de entrada sin error
+          $(element).removeClass("is-invalid");
+        }
+      });
+
+      // Mostrar mensaje de alerta al enviar el formulario válido
+      $("#mi-formulario").submit(function(event) {
+        event.preventDefault();
+        if ($(this).valid()) {
+          alert("Formulario enviado");
+          // Aquí puedes hacer lo que quieras con los datos del formulario
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
